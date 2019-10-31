@@ -6,7 +6,9 @@ const Helpers = use('Helpers')
 class FileController {
   async store ({ request, response }) {
     try {
-      if (!request.file('file')) return
+      if (!request.file('file')) {
+        return
+      }
 
       const upload = request.file('file', { size: '2mb' })
 
